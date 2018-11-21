@@ -1,0 +1,42 @@
+<section>
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Contact Info</h4>
+    </div>
+    <div class="modal-body">
+      <h2>Name : {{ contactInfo?.first_name }} {{ contactInfo?.last_name }}</h2>
+      <h5><a href='mailto:{{ contactInfo?.email }}'>email : {{ contactInfo?.email }}</a></h5>
+
+    </div>
+
+  </ng-template>
+
+  <div>
+    <label for="">Search:</label>
+    <input type="text" name="searchBar" [(ngModel)]="searchEngine">
+  </div>
+  <div class='bikes'>
+    <div class='bike' *ngFor='let p of posts | filter: searchEngine'>
+      <div class='col-sm-3'>
+
+        <img [src]='p.photo'>
+      </div>
+      <div class='col-sm-7'>
+        <h2>Title: {{ p.title }}</h2>
+        <p>Description: {{ p.description }} </p>
+      </div>
+
+      <div class='col-sm-2'>
+        <h2>Price: {{ p.price | currency:'USD':true }} </h2>
+        <h4>Location: {{ p.location }} </h4>
+      </div>
+      <h5>Updated: {{ p.createdAt }}</h5>
+
+      <button class='btn btn-info' (click)='open(content)' (click)='onContact(p._id)' *ngIf='p.users != userID'>Contact</button>
+      <button class='btn btn-danger' (click)='onDelete(p._id)' *ngIf='p.users == userID'>Delete</button>
+      <hr>
+    </div>
+    <br>
+  </div>
+</section>

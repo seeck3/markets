@@ -1,0 +1,19 @@
+<div>
+
+  <div class='f-div'>
+    <button class='btn btn-link' [routerLink]="['markets']">Browse</button>
+    <!-- <a class='btn btn-link' [routerLink]="['markets']">Browse</a> -->
+  </div>
+  <div>
+    <button class='btn btn-link' [routerLink]='["markets/mylisting"]'>My Listing</button>
+    <!-- <a class='btn btn-link' [routerLink]='["markets/mylisting"]'>My Listing</a> -->
+  </div>
+  <div>
+    <button class='btn btn-link' [routerLink]="['markets/new']">Create a Post</button>
+    <!-- <a class='btn btn-link' [routerLink]="['markets/new']">Create a Post</a> -->
+  </div>
+  <div>
+    <button class='btn btn-link' (click)='onLogout()'>Log out</button>
+    <!-- <a class='btn btn-link' (click)='onLogout()'>Logoff</a> -->
+  </div>
+</div>

@@ -1,0 +1,22 @@
+div {
+  outline: 1px solid black;
+}
+
+/* textarea {
+  vertical-align: top;
+} */
+
+/*
+input {
+  text-align: right;
+  display: inline-block
+} */
+
+.wrapper {
+  margin: 12px;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+}

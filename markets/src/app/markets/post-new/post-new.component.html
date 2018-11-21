@@ -1,0 +1,38 @@
+<div class='wrapper'>
+  <h1>Create A Post</h1>
+  <fieldset>
+    <legend>Create Listing</legend>
+
+    <!-- <input type="file" (change)='onFileSelected($event)'>
+      <br>
+      <button (click)='onUpload()'>Upload</button> -->
+    <form class='form-group' (submit)='onSubmit($event, form)' #form='ngForm'>
+      <div class='col-sm-3'>
+
+        <img [src]='post.photo' alt='click to add photo (required)'>
+      </div>
+      <div class='col-sm-3'>
+        <!-- <img [src]='post.photo' alt='click to add photo (required)' (click)='uploadPhoto()'> -->
+        <label for="">Photo: </label>
+        <input class='form-control' type="text" name="photo" [(ngModel)]='post.photo' placeholder="Please enter image URL">
+
+        <div>
+          <label for="title">Title : </label>
+          <input class='form-control' type="text" name='title' [(ngModel)]='post.title'>
+          <br>
+          <label for="description">Description : </label>
+          <textarea class='form-control' name="description" rows="5" [(ngModel)]='post.description'></textarea>
+        </div>
+        <label for="price">Price : </label>
+        <input class='form-control' type="number" name='price' [(ngModel)]='post.price'>
+        <br>
+        <label for="location">Location : </label>
+        <input class='form-control' type="text" name='location' [(ngModel)]='post.location'>
+        <br><br>
+        <button>Submit</button>
+      </div>
+      <!-- <div class='col-sm-2'>
+      </div> -->
+    </form>
+  </fieldset>
+</div>

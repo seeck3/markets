@@ -1,0 +1,19 @@
+div {
+  /* outline: 1px solid black; */
+}
+
+.col-sm-3 {
+  display: inline-block;
+}
+
+/* .bike {
+  display: inline-block;
+} */
+.col-sm-7 {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.col-sm-2 {
+  display: inline-block;
+}

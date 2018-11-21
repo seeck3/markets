@@ -1,0 +1,30 @@
+<section>
+  <div>
+    <label for="">Search:</label>
+    <input type="text" name="searchBar" [(ngModel)]="searchEngine">
+  </div>
+  <div class='bikes'>
+    <div class='bike' *ngFor='let p of posts | filter: searchEngine'>
+      <div *ngIf='p.users == userID'>
+
+        <div class='col-sm-3'>
+
+          <img [src]='p.photo'>
+        </div>
+        <div class='col-sm-7'>
+          <h2>Title: {{ p.title }}</h2>
+          <p>Description: {{ p.description }} </p>
+        </div>
+        <div class='col-sm-2'>
+          <h2>Price: {{ p.price | currency:'USD':true }} </h2>
+          <h4>Location: {{ p.location }} </h4>
+        </div>
+        <h5>Updated: {{ p.createdAt }}</h5>
+        {{ p.users }}
+        <button class='btn btn-danger' (click)='onDelete(p._id)' *ngIf='p.users == userID'>Delete</button>
+        <hr>
+      </div>
+    </div>
+    <br>
+  </div>
+</section>
