@@ -63,7 +63,7 @@ export class PostListComponent implements OnInit {
     console.log('contact info');
     this.httpService.contactPost(id).subscribe(contactPost => {
       this.contactInfo = contactPost;
-      console.log(contactPost);
+      // console.log(contactPost);
     });
   }
   onDelete(id: number) {
