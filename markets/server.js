@@ -6,7 +6,7 @@ const path = require('path');
 const logger = require('morgan');
 
 const app = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8081;
 const sessionConfig = {
   saveUninitialized: true,
   secret: 'sessionsecret',
