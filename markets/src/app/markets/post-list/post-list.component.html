@@ -13,25 +13,26 @@
   </ng-template>
 
   <div>
-    <label for="">Search:</label>
-    <input type="text" name="searchBar" [(ngModel)]="searchEngine">
+    <!-- <label for="">Search:</label> -->
+    <input class="form-control form-control-lg form-control-borderless" type="text" name="searchBar" [(ngModel)]="searchEngine"
+      placeholder="Search.....">
   </div>
   <div class='bikes'>
     <div class='bike' *ngFor='let p of posts | filter: searchEngine'>
       <div class='col-sm-3'>
 
-        <img [src]='p.photo'>
+        <img *ngIf='p.photo' [src]='p.photo'>
       </div>
       <div class='col-sm-7'>
-        <h2>Title: {{ p.title }}</h2>
-        <p>Description: {{ p.description }} </p>
+        <h2 class="title">Title: <span>{{ p.title }}</span> </h2>
+        <p class="title">Description: {{ p.description }} </p>
       </div>
 
       <div class='col-sm-2'>
-        <h2>Price: {{ p.price | currency:'USD':true }} </h2>
-        <h4>Location: {{ p.location }} </h4>
+        <h2>Price: <span>{{ p.price | currency:'USD':true }}</span> </h2>
+        <h4>Location: <span>{{ p.location }}</span> </h4>
       </div>
-      <h5>Updated: {{ p.createdAt }}</h5>
+      <h5>Updated: <span>{{ p.createdAt }}</span></h5>
 
       <button class='btn btn-info' (click)='open(content)' (click)='onContact(p._id)' *ngIf='p.users != userID'>Contact</button>
       <button class='btn btn-danger' (click)='onDelete(p._id)' *ngIf='p.users == userID'>Delete</button>

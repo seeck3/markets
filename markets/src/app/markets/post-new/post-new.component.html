@@ -9,7 +9,7 @@
     <form class='form-group' (submit)='onSubmit($event, form)' #form='ngForm'>
       <div class='col-sm-3'>
 
-        <img [src]='post.photo' alt='click to add photo (required)'>
+        <img *ngIf='post.photo' [src]='post.photo' alt='click to add photo (required)'>
       </div>
       <div class='col-sm-3'>
         <!-- <img [src]='post.photo' alt='click to add photo (required)' (click)='uploadPhoto()'> -->
