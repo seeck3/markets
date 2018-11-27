@@ -39,6 +39,7 @@ module.exports = {
   register(request, response) {
     User.create(request.body)
       .then(user => {
+        request.session.user_id = user._id;
         completeLogin(request, response, user);
       })
       .catch(error => {
