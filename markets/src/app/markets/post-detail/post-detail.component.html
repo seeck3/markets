@@ -4,6 +4,8 @@
     <input class="form-control form-control-lg form-control-borderless" type="text" name="searchBar" [(ngModel)]="searchEngine"
       placeholder="Search.....">
   </div>
+  <br>
+  <br>
   <div class='bikes'>
     <div class='bike' *ngFor='let p of posts | filter: searchEngine'>
       <div *ngIf='p.users == userID'>
